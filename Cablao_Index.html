@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css_website/style.css">
+<script src="js/style.js"></script>
+</head>
+<body>
+
+<div class="header"  style="background-image: url('images/Header.png');">
+  <header>
+  <h2 style="width: 23%; position: absolute; top: -70px; left: 0; pointer-events: none;"><img src="images/logo.png" alt="Logo"></h2>
+  <img class="Headerimg" src="images/student-studying.gif" alt="Headerimg">
+  <h1 style="position: absolute; left: 310px; top: -10px;">Welcome <br>to <br>Cablao College</h1>
+  </header>
+</div>
+
+<ul class="navbar" id="navbar">
+  <li><a href="#">Home</a></li>
+  <li><a href="About.html">About</a></li>
+  <!--<li><a href="#">News</a>-->
+  <li class="dropdown">
+    <a class="dropbtn"  href="javascript:void(0)">
+      <div class="menuicon"></div>
+      <div class="menuicon"></div>
+      <div class="menuicon"></div>
+    </a>
+    <div class="dropdown-content">
+      <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+      <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</a>
+      <a href="#" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Student</a>
+      <a href="#" onclick="document.getElementById('id04').style.display='block'" style="width:auto;">Alumni</a>
+      <a href="#" onclick="document.getElementById('id05').style.display='block'" style="width:auto;">Employee</a>
+    </div>
+    
+  </li>
+  
+</ul>
+
+<script>
+                  
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function() {myFunction()};
+ 
+ // Get the navbar
+ var navbar = document.getElementById("navbar");
+ 
+ // Get the offset position of the navbar
+ var sticky = navbar.offsetTop;
+ 
+ // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+ function myFunction() {
+   if (window.pageYOffset >= sticky) {
+     navbar.classList.add("sticky")
+   } else {
+     navbar.classList.remove("sticky");
+   }
+ } 
+ </script>
+
+<div class="row">
+  <div class="side">
+
+    <div class="openBtn">
+      <button class="openButton" onclick="document.getElementById('id00').style.display='block'"><strong>Apply Now</strong></button>
+    </div><br><br>
+
+    <h5>Photo of school:</h5>
+    <img id="sideimg" src="images/School_Building.jpeg" alt="Building">
+    <div id="myModalimg" class="modalimg">
+      <span class="closeimg">&times;</span>
+      <img class="modal-contentimg" id="img01">
+      <div id="caption"></div>
+
+      <script src="js/style.js"></script>
+
+    </div>
+    <h3>Annual tuition</h3>
+    <div class="fakeimg" style="height:70px;">P14,000 – P20,000 per year</div><br>
+    <h3>Number of Programs</h3>
+    <div class="fakeimg" style="height:60px;">5 programs</div><br>
+    <h3>Annual tuition for scholar students</h3>
+    <div class="fakeimg" style="height:60px; margin-bottom: 220px;">FREE</div>
+    <br>
+    <br>
+  </div>
+
+  <div class="main content">
+
+    <script>
+      window.onscroll = function() {myFunction()};
+      
+      var navbar = document.querySelector(".navbar");
+      var sticky = navbar.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      </script>
+    
+    <h2>Welcome to Cablao College</h2>
+    <h5>Title description, Dec 7, 2023</h5>
+    <p>The Cablao College helps to improve the college students knowledge on their future carreers, helps them improve and provides the 
+      right environment to develop the students skills and values.
+    </p>
+
+    <div id="id00" class="modal">
+      
+      <form class="modal-content animate" action="/Cablao_Index.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Your Email" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Your Password" name="psw" required>
+            
+          <button type="submit" class="SignLogin">Sign Up</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id00').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+        </div>
+      </form>
+    </div>
+  
+
+    <div id="id01" class="modal" onload="document.form1.uname.focus()">
+      
+      <form class="modal-content animate" action="#" method="post" name="form1">
+        <div class="imgcontainer">
+          <h2><center>LOGIN</center></h2>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333969812_936055247764388_3214540868112766736_n copy.jpg" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Your Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Your Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <button type="submit" class="SignLogin" onclick="Validateusername(document.form1.uname)">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+          <span class="psw">Forgot 
+          <a href="#" onclick="document.getElementById('id02').style.display='block'; 
+          document.getElementById('id01').style.display='none' " >password?</a></span></div>
+      </form>
+      <form>
+          <div id="message" class="sidecontainer">
+            <h4>Password must contain the following:</h4>
+            <p id="letter1" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital1" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number1" class="invalid">A <b>number</b></p>
+            <p id="length1" class="invalid">Minimum <b>8 characters</b></p></div>
+      </form>
+      <script src="js/style.js"></script>
+        </div>
+        
+        
+
+
+<div class="main">
+    <div id="id02" class="modal" onload="document.form2.email.focus()">
+      
+      <form class="modal-content animate" action="#" method="post" name="form2">
+        <div class="imgcontainer">
+          <h2><center>SIGN IN</center></h2>
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333969812_936055247764388_3214540868112766736_n copy.jpg" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Your Email Adress" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Your Password" id="psw2" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <label for="psw"><b>Re-enter Password</b></label>
+          <input type="password" placeholder="Re-enter Your Password" id="psw2.1" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <button type="submit" class="SignLogin" onclick="ValidateEmail(document.form2.email)">Sign In</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+        <span class="psw">Already 
+        <a href="#" onclick="document.getElementById('id01').style.display='block'; 
+        document.getElementById('id02').style.display='none' " >Signed In?</a></span></div>
+    </form>
+    <form>
+        <div id="message2" class="sidecontainer">
+          <h5>Password must contain the following:</h5>
+          <p id="letter2" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital2" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number2" class="invalid">A <b>number</b></p>
+          <p id="length2" class="invalid">Minimum <b>8 characters</b></p></div>
+    </form>
+    <form>
+      <div id="message21" class="sidecontainer">
+        <h5>Password must contain the following:</h5>
+        <p id="letter2.1" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital2.1" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number2.1" class="invalid">A <b>number</b></p>
+        <p id="length2.1" class="invalid">Minimum <b>8 characters</b></p></div>
+  </form>
+      </div>
+      <script src="js/style.js"></script>
+    
+
+    <div id="id03" class="modal" onload="document.form12.uname.focus()">
+      
+      <form class="modal-content animate" action="/action_page.php" method="post" name="form12">
+        <div class="imgcontainer">
+          <h2><center>STUDENT</center></h2>
+          <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333969812_936055247764388_3214540868112766736_n copy.jpg" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Your Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Your Password" Id="psw3" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required>
+          <button type="submit" class="SignLogin" onclick="Validateusername2(document.form12.uname)">Login</button>
+         <label>
+         <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+        <span class="psw">Forgot 
+        <a href="#" onclick="document.getElementById('id02').style.display='block'; 
+        document.getElementById('id03').style.display='none' " >password?</a></span></div>
+    </form>
+    <form>
+        <div id="message3" class="sidecontainer">
+          <h5>Password must contain the following:</h5>
+          <p id="letter3" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital3" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number3" class="invalid">A <b>number</b></p>
+          <p id="length3" class="invalid">Minimum <b>8 characters</b></p></div>
+    </form>
+      </div>
+      <script src="js/style.js"></script>
+    
+
+    <div id="id04" class="modal" onload="document.form22.email.focus()">
+      
+      <form class="modal-content animate" action="#" method="post" name="form22">
+        <div class="imgcontainer">
+          <h2><center>ALUMNI</center></h2>
+          <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333969812_936055247764388_3214540868112766736_n copy.jpg" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Your Email Address" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Your Password" id="psw4" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <button type="submit" class="SignLogin" onclick="ValidateEmail2(document.form22.email)">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+        <span class="psw">Forgot 
+        <a href="#" onclick="document.getElementById('id02').style.display='block'; 
+        document.getElementById('id04').style.display='none' " >password?</a></span></div>
+    </form>
+    <form>
+        <div id="message4" class="sidecontainer">
+          <h5>Password must contain the following:</h5>
+          <p id="letter4" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital4" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number4" class="invalid">A <b>number</b></p>
+          <p id="length4" class="invalid">Minimum <b>8 characters</b></p></div>
+    </form>
+    <script src="js/style.js"></script>
+    </div>
+    
+
+    <div id="id05" class="modal" onload="document.form13.uname.focus()">
+
+    <form class="modal-content animate" action="/action_page.php" method="post" name="form13">
+      <div class="imgcontainer">
+        <h2><center>EMPLOYEE</center></h2>
+        <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="images/333969812_936055247764388_3214540868112766736_n copy.jpg" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Your Username" name="uname" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Your Password" id="psw5" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <button type="submit" class="SignLogin" onclick="Validateusername3(document.form13.uname)">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn SignLogin">Cancel</button>
+        <span class="psw">Forgot 
+        <a href="#" onclick="document.getElementById('id02').style.display='block'; 
+        document.getElementById('id05').style.display='none' " >password?</a></span></div>
+    </form>
+    <form>
+      <div id="message5" class="sidecontainer">
+        <h5>Password must contain the following:</h5>
+        <p id="letter5" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital5" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number5" class="invalid">A <b>number</b></p>
+        <p id="length5" class="invalid">Minimum <b>8 characters</b></p> </div>
+  </form>
+      </div>
+      <script src="js/style.js"></script>
+      </div>
+
+
+
+    
+
+    <h3>Images:</h3>
+    <div class="slideshow-container" >
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="images/homepage-marketing-block-1.webp" style="width:82%; margin-left: 95px;">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="images/Anime-School-Backgrounds-HD-Free-download.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="images/106922887-1628206615260-gettyimages-887132600-as1700__08.jpeg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      
+      </div>
+      <br>
+      
+      <div style="text-align: center;">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+      
+      <script>
+      let slideIndex = 0;
+      showSlides();
+      
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+      </script>
+      
+    </div>
+
+  </div>
+<div>
+  <footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3><img src="images/logo.png" style="width: 30%; position: relative;"> Cablao<span>College</span></h3>
+
+    <p class="footer-links">
+      <a href="#" class="link-1">Home</a>
+    
+      <a href="#">About</a>
+      
+      <a href="#">Faq</a>
+      
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">Cablao Collage © 2023</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Wilson Street</span>Cebu City</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+639 706 391 966</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">Elijah@CablaoCollege.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+      <span>About the School</span>
+      The Cablao College helps college students be able to learn and be ready for their future careers.
+    </p>
+
+    <p class="footer-company-about" style="margin-top: 30px; margin-bottom: -30px;"><span>Follow Us</span></p>
+    <div class="footer-icons">
+
+      <a href="https://www.facebook.com/MITCSAIL/videos/rick-roll/175310064147000/"><i class="fa fa-facebook"><img src="images/kindpng_227301.png"></i></a>
+      <a href="https://twitter.com/rickroll?lang=en"><i class="fa fa-twitter"></i><img src="images/clipart1963355.png"></a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-Youtube"></i><img src="images/pngkey.com-youtube-png-32240.png"></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+  </div>
+  </footer>
+</div>
+
+
+
+</body>
+</html>
